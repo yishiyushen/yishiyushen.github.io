@@ -10,9 +10,8 @@
     <title>新一代构建工具Gradle | 记录学习的技能和遇到的问题</title>
     <meta name="author" content="伊始雨深">
     
-    <meta name="description" content="#####导语：
-
-随着技术的发展，不管是前端开发、服务端开发或者是移动端开发（移动也是前端的一个分支）中都会用到自动化构建工具。如果我们没有使用过自动化构建工具，可能对自动构建工具没有什么概念，为什么需要用到自动化构建工具。我们先来看一下在没有使用自动化构建工具前，我们是如何开发项目、管理项目的。">
+    <meta name="description" content="导语：
+随着技术的发展，不管是前端开发、服务端开发或者是移动端开发（移动也是前端的一个分支）中都会用到自动化构建工具。如果我们没有使用过自动化构建工具，可能对自动构建工具没有什么概念，为什么需要用到自动化构建工具。我们先来看一下在没有使用自动化构建工具前，我们是如何开发项目、管理项目的。项目开发过程">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -248,31 +247,28 @@
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#导语："><span class="section table-of-contents-text">导语：</span></a></li></ol></li></ol></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#构建工具的作用"><span class="section table-of-contents-text">构建工具的作用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Java方面主流的构建工具"><span class="section table-of-contents-text">Java方面主流的构建工具</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Gradle是什么"><span class="section table-of-contents-text">Gradle是什么</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Gradle的作用，即能为我们做什么"><span class="section table-of-contents-text">Gradle的作用，即能为我们做什么</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#准备使用Gradle"><span class="section table-of-contents-text">准备使用Gradle</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#groovy语言基础知识"><span class="section table-of-contents-text">groovy语言基础知识</span></a>
 </div>
 
 
             <div class="entry pink-link-context">
-                <p>  #####导语：</p>
-<blockquote>
+                <h5 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h5><blockquote>
 <p>随着技术的发展，不管是前端开发、服务端开发或者是移动端开发（移动也是前端的一个分支）中都会用到自动化构建工具。如果我们没有使用过自动化构建工具，可能对自动构建工具没有什么概念，为什么需要用到自动化构建工具。我们先来看一下在没有使用自动化构建工具前，我们是如何开发项目、管理项目的。项目开发过程中涉及新建项目-》代码开发—》依赖管理-》编译-》测试-》打包-》上传等过程。依赖管理，项目开发过程中会用到很多jar包，自己开发的有别人开发的，这些都放在项目的lib目录。大点的项目几百个，很容易造成依赖冲突，另外就是版本更新特别不方便，你得手动去复制新版本的jar包放到lib目录下。测试过程，大家都不重视，基本上写一个java类，在main方法调用调试几下就完了。打包，得手动，如在Eclipse上导出jar包，web开发的话导出war包。另外发布不同版本，还得手动去更改后才能打出自己想要的。上传过程中，得手动或用ftp上传到服务器上面。这些过程太频繁、琐碎无聊，小点项目还能管理的过来，大的项目简直是灾难。技术大牛们忍无可忍总于爆发了，发明出了构建工具这个东西，将程序员们从水深火热中解脱出来。</p>
 </blockquote>
-<p>##构建工具的作用</p>
-<ul>
+<h2 id="构建工具的作用"><a href="#构建工具的作用" class="headerlink" title="构建工具的作用"></a>构建工具的作用</h2><ul>
 <li>依赖管理</li>
 <li>自动测试、自动打包、自动发布到制定的地方去</li>
 <li>机器能干的，我们绝不自己动手</li>
 </ul>
-<p>##Java方面主流的构建工具</p>
-<ul>
+<h2 id="Java方面主流的构建工具"><a href="#Java方面主流的构建工具" class="headerlink" title="Java方面主流的构建工具"></a>Java方面主流的构建工具</h2><ul>
 <li>最早出现的Ant，提供了编译、测试、打包三个最基本的功能</li>
 <li>接着Maven,在Ant的基础上加了依赖管理和发布功能，通过xml标记性语言来进行管理构建脚步</li>
 <li>接着重点来了，我们要学习的Gradle，它在Maven基础上更近一步，使用Groovy进行管理构建脚步，不再使用xml ，因为项目大了之后使用xml很容易造成啰唆、臃肿难以管理。而使用这种特定领域语言来管理构建脚步具有更高的可拓展性和灵活性。</li>
 </ul>
-<p>##Gradle是什么<br>  一个开源的项目自动化构建工具，建立在Apache Ant 和 Apache Maven概念的基础上，并引入了基于Groovy的特定领域语言（DSL），而不再使用xml形式的管理构建脚本。</p>
-<p>##Gradle的作用，即能为我们做什么<br> Gradle是一个项目自动化构建工具，它当然具备自动化构建的所有功能，依赖管理，自动化测试、自动化打包，发布到制定的地方去。另外它具有很高的拓展性和灵活性，你想要它做什么，它都能帮你完成。</p>
-<p>###准备使用Gradle<br>  Gradle的安装、配置环境变量<br>  1. 因为Gradle是基于JVM的所以确保本地安装了JDK  java -version<br>  2. 打开官网下载安装包，解压到制定的目录Gradle官网<a href="https://gradle.org/docs#getting-started" target="_blank" rel="external">https://gradle.org/docs#getting-started</a><br>  3. 配置环境变量，GRADLE_HOME添加到path中，%GRADLE_HOME%\bin;<br>  4. 验证是否安装成功，gradle -v</p>
-<p>##groovy语言基础知识<br>  <strong>Groovy是什么</strong><br>  Groovy是用Java虚拟机的一种敏捷的动态语言，它是一种成熟的面向对象编程语言，即可用于面向对象编程，又可以用作纯粹的脚本语言。使用该语言不需要编写太多的代码，同时又具有闭包和动态语言中的其他特性。<br>下面的知识点都可以到官网文档中查询到<a href="http://www.groovy-lang.org/documentation.html" target="_blank" rel="external">http://www.groovy-lang.org/documentation.html</a><br>  <strong>与java相比</strong><br>            1、Groovy完全兼容java语法，最终也编译成字节码<br>            2、Groovy注释标记和Java一样，支持//或者//<br>            3、Groovy中支持动态类型，即定义变量的时候可以不指定其类型。<br>            4、Groovy中，变量定义可以使用关键字def。注意，虽然def不是必须的，但是为了代码清晰，建议还是使用def关键字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def var =1 </div><div class="line">def str= &quot;i am a person&quot;</div><div class="line">def int x = 1//也可以指定类型</div></pre></td></tr></table></figure></p>
+<h2 id="Gradle是什么"><a href="#Gradle是什么" class="headerlink" title="Gradle是什么"></a>Gradle是什么</h2><p>  一个开源的项目自动化构建工具，建立在Apache Ant 和 Apache Maven概念的基础上，并引入了基于Groovy的特定领域语言（DSL），而不再使用xml形式的管理构建脚本。</p>
+<h2 id="Gradle的作用，即能为我们做什么"><a href="#Gradle的作用，即能为我们做什么" class="headerlink" title="Gradle的作用，即能为我们做什么"></a>Gradle的作用，即能为我们做什么</h2><p> Gradle是一个项目自动化构建工具，它当然具备自动化构建的所有功能，依赖管理，自动化测试、自动化打包，发布到制定的地方去。另外它具有很高的拓展性和灵活性，你想要它做什么，它都能帮你完成。</p>
+<h3 id="准备使用Gradle"><a href="#准备使用Gradle" class="headerlink" title="准备使用Gradle"></a>准备使用Gradle</h3><p>  Gradle的安装、配置环境变量<br>  1. 因为Gradle是基于JVM的所以确保本地安装了JDK  java -version<br>  2. 打开官网下载安装包，解压到制定的目录Gradle官网<a href="https://gradle.org/docs#getting-started" target="_blank" rel="external">https://gradle.org/docs#getting-started</a><br>  3. 配置环境变量，GRADLE_HOME添加到path中，%GRADLE_HOME%\bin;<br>  4. 验证是否安装成功，gradle -v</p>
+<h2 id="groovy语言基础知识"><a href="#groovy语言基础知识" class="headerlink" title="groovy语言基础知识"></a>groovy语言基础知识</h2><p>  <strong>Groovy是什么</strong><br>  Groovy是用Java虚拟机的一种敏捷的动态语言，它是一种成熟的面向对象编程语言，即可用于面向对象编程，又可以用作纯粹的脚本语言。使用该语言不需要编写太多的代码，同时又具有闭包和动态语言中的其他特性。<br>下面的知识点都可以到官网文档中查询到<a href="http://www.groovy-lang.org/documentation.html" target="_blank" rel="external">http://www.groovy-lang.org/documentation.html</a><br>  <strong>与java相比</strong><br>            1、Groovy完全兼容java语法，最终也编译成字节码<br>            2、Groovy注释标记和Java一样，支持//或者//<br>            3、Groovy中支持动态类型，即定义变量的时候可以不指定其类型。<br>            4、Groovy中，变量定义可以使用关键字def。注意，虽然def不是必须的，但是为了代码清晰，建议还是使用def关键字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def var =1 </div><div class="line">def str= &quot;i am a person&quot;</div><div class="line">def int x = 1//也可以指定类型</div></pre></td></tr></table></figure></p>
 <p>    5、函数定义时，参数的类型也可以不指定。比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String function(arg1,args2)&#123;//无需指定参数类型</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>  6、除了变量定义可以不指定类型外，Groovy中函数的返回值也可以是无类型的。<br>        比如：//无类型的函数定义，必须使用def关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def  nonReturnTypeFunc()&#123;</div><div class="line">     last_line   //最后一行代码的执行结果就是本函数的返回值</div><div class="line">&#125;</div><div class="line">//如果指定了函数返回类型，则可不必加def关键字来定义函数</div><div class="line">String  getString()&#123;</div><div class="line">   return &quot;I am a string&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>其实，所谓的无返回类型的函数，我估计内部都是按返回Object类型来处理的。毕竟，Groovy是基于Java的，而且最终会转成Java Code运行在JVM上。<br>  7、 函数返回值：Groovy的函数里，可以不使用return xxx来设置xxx为函数返回值。如果不使用return语句的话，则函数里最后一句代码的执行结果被设置成返回值。比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//下面这个函数的返回值是字符串&quot;getSomething return value&quot;</div><div class="line">def getSomething()&#123;</div><div class="line">   &quot;getSomething return value&quot; //如果这是最后一行代码，则返回类型为String</div><div class="line">    1000 //如果这是最后一行代码，则返回类型为Integer</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
