@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yishiyushen.github.io/"/>
-  <updated>2017-06-20T15:36:18.699Z</updated>
+  <updated>2017-06-25T15:48:00.686Z</updated>
   <id>https://yishiyushen.github.io/</id>
   
   <author>
@@ -16,32 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://yishiyushen.github.io/2017/06/20/hello-world/"/>
-    <id>https://yishiyushen.github.io/2017/06/20/hello-world/</id>
-    <published>2017-06-20T15:36:18.735Z</published>
-    <updated>2017-06-20T15:36:18.699Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>新一代构建工具Gradle</title>
     <link href="https://yishiyushen.github.io/2017/06/18/%E6%96%B0%E4%B8%80%E4%BB%A3%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7Gradle/"/>
     <id>https://yishiyushen.github.io/2017/06/18/新一代构建工具Gradle/</id>
     <published>2017-06-18T14:38:16.000Z</published>
-    <updated>2017-06-20T15:39:26.589Z</updated>
+    <updated>2017-06-25T15:48:00.686Z</updated>
     
     <summary type="html">
     
       &lt;h5 id=&quot;导语：&quot;&gt;&lt;a href=&quot;#导语：&quot; class=&quot;headerlink&quot; title=&quot;导语：&quot;&gt;&lt;/a&gt;导语：&lt;/h5&gt;&lt;blockquote&gt;
-&lt;p&gt;随着技术的发展，不管是前端开发、服务端开发或者是移动端开发（移动也是前端的一个分支）中都会用到自动化构建工
+&lt;p&gt;随着技术的发展，不管是前端开发、服务端开发或者是移动端开发（移动也是前端的一个分支）中都会用到自动化构建工具。如果我们没有使用过自动化构建工具，可能对自动构建工具没有什么概念，为什么需要用到自动化构建工具。我们先来看一下在没有使用自动化构建工具前，我们是如何开发项目、管理项目的。项目开发过程中涉及新建项目-》代码开发—》依赖管理-》编译-》测试-》打包-》上传等过程。依赖管理，项目开发过程中会用到很多jar包，自己开发的有别人开发的，这些都放在项目的lib目录。大点的项目几百个，很容易造成依赖冲突，另外就是版本更新特别不方便，你得手动去复制新版本的jar包放到lib目录下。测试过程，大家都不重视，基本上写一个java类，在main方法调用调试几下就完了。打包，得手动，如在Eclipse上导出jar包，web开发的话导出war包。另外发布不同版本，还得手动去更改后才能打出自己想要的。上传过程中，得手动或用ftp上传到服务器上面。这些过程太频繁、琐碎无聊，小点项目还能管理的过来，大的项目简直是灾难。技术大牛们忍无可忍总于爆发了，发明出了构建工具这个东西，将程序员们从水深火热中解脱出来。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
